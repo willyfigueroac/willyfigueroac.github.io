@@ -1,0 +1,361 @@
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Consultoría | Willy F. Figueroa Celis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .service-card { 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-top: 4px solid transparent;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .card-1 { border-top-color: #0891b2; }
+        .card-2 { border-top-color: #4f46e5; }
+        .card-3 { border-top-color: #7c3aed; }
+        .card-4 { border-top-color: #2563eb; }
+        
+        .differential-card {
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+        }
+
+        /* Animación de carga */
+        .dot-flashing {
+            position: relative;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: #4f46e5;
+            color: #4f46e5;
+            animation: dot-flashing 1s infinite linear alternate;
+            animation-delay: .5s;
+        }
+        .dot-flashing::before, .dot-flashing::after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            top: 0;
+        }
+        .dot-flashing::before {
+            left: -15px;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: #4f46e5;
+            color: #4f46e5;
+            animation: dot-flashing 1s infinite alternate;
+            animation-delay: 0s;
+        }
+        .dot-flashing::after {
+            left: 15px;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: #4f46e5;
+            color: #4f46e5;
+            animation: dot-flashing 1s infinite alternate;
+            animation-delay: 1s;
+        }
+        @keyframes dot-flashing {
+            0% { background-color: #4f46e5; }
+            50%, 100% { background-color: #e2e8f0; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased">
+
+    <!-- Navegación -->
+    <nav class="sticky top-0 bg-white/80 backdrop-blur-md z-50 border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex flex-col">
+                <span class="text-xl font-extrabold tracking-tighter text-slate-800">WILLY F. FIGUEROA CELIS</span>
+                <span class="text-[10px] text-slate-500 font-medium uppercase tracking-widest hidden md:block">Consultoría & Innovación Educativa</span>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <div class="hidden lg:flex gap-6 text-xs font-bold uppercase tracking-widest text-slate-500 mr-4">
+                    <span>Consultoría</span>
+                    <span>Formación</span>
+                </div>
+                <div class="flex items-center gap-3 border-l border-slate-200 pl-4">
+                    <a href="https://www.linkedin.com/in/willyfigueroa/" target="_blank" class="text-slate-600 hover:text-blue-600 transition-colors" title="LinkedIn">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="mailto:willyfigueroac@gmail.com" class="text-slate-600 hover:text-red-500 transition-colors" title="Email">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="max-w-4xl mx-auto px-6 py-16 md:py-24 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-slate-900">
+            Portafolio de <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-indigo-600">Servicios Profesionales</span>
+        </h1>
+        <p class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+            Transformación digital y pedagógica a través de la formación estratégica en tecnologías emergentes y metodologías activas.
+        </p>
+    </header>
+
+    <!-- SECCIÓN DE SERVICIOS -->
+    <main class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+            
+            <!-- 1. IA Generativa -->
+            <div class="service-card card-1 bg-white p-8 rounded-xl shadow-sm border border-slate-100 flex flex-col">
+                <div class="w-12 h-12 bg-cyan-50 text-cyan-600 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-4 text-slate-800">1. Formación en Inteligencia Artificial Generativa (IAG)</h3>
+                <ul class="space-y-3 text-sm text-slate-600 flex-grow">
+                    <li class="flex gap-2"><strong>•</strong> <span><strong>IA para Educadores:</strong> Diseño de experiencias innovadoras y automatización pedagógica.</span></li>
+                    <li class="flex gap-2"><strong>•</strong> <span><strong>IA Administrativa:</strong> Optimización de procesos y generación ágil de contenidos.</span></li>
+                    <li class="flex gap-2"><strong>•</strong> <span><strong>Ética e Integridad:</strong> Talleres sobre uso responsable y marcos éticos institucionales.</span></li>
+                    <li class="flex gap-2"><strong>•</strong> <span><strong>Ingeniería de Prompts:</strong> Creación de instrucciones efectivas para modelos de lenguaje.</span></li>
+                </ul>
+            </div>
+
+            <!-- 2. STEM y Simulaciones -->
+            <div class="service-card card-2 bg-white p-8 rounded-xl shadow-sm border border-slate-100 flex flex-col">
+                <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-4 text-slate-800">2. Educación STEM y Simulaciones Interactivas</h3>
+                <ul class="space-y-3 text-sm text-slate-600 flex-grow">
+                    <li class="flex gap-2"><strong>•</strong> <span><strong>Simulaciones PhET:</strong> Actividades prácticas en laboratorios virtuales para ciencias y matemáticas.</span></li>
+                    <li class="flex gap-2"><strong>•</strong> <span><strong>Metodologías STEM/STEAM:</strong> Enfoque integral para el desarrollo del pensamiento crítico.</span></li>
+                    <li class="flex gap-2"><strong>•</strong> <span><strong>Pensamiento Computacional:</strong> Lógica de programación y resolución de problemas con Scratch.</span></li>
+                </ul>
+            </div>
+
+            <!-- 3. Metodologías Activas -->
+            <div class="service-card card-3 bg-white p-8 rounded-xl shadow-sm border border-slate-100 flex flex-col">
+                <div class="w-12 h-12 bg-violet-50 text-violet-600 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-4 text-slate-800">3. Metodologías Activas y Andamiaje Tecnológico</h3>
+                <ul class="space-y-3 text-sm text-slate-600 flex-grow">
+                    <li class="flex gap-2"><strong>•</strong> <span><strong>Integración TIC e IA:</strong> Unidades didácticas bajo modelos de aprendizaje activo (ABP).</span></li>
+                    <li class="flex gap-2"><strong>•</strong> <span><strong>Aprendizaje Significativo:</strong> Tecnología como soporte para la investigación y colaboración.</span></li>
+                    <li class="flex gap-2"><strong>•</strong> <span><strong>RED y OVA:</strong> Producción de contenidos digitales con objetivos pedagógicos.</span></li>
+                </ul>
+            </div>
+
+            <!-- 4. Gestión Estratégica -->
+            <div class="service-card card-4 bg-white p-8 rounded-xl shadow-sm border border-slate-100 flex flex-col">
+                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-4 text-slate-800">4. Gestión Estratégica y Productividad Digital</h3>
+                <ul class="space-y-3 text-sm text-slate-600 flex-grow">
+                    <li class="flex gap-2"><strong>•</strong> <span><strong>Liderazgo Tecnológico:</strong> Asesoría directiva para ecosistemas digitales.</span></li>
+                    <li class="flex gap-2"><strong>•</strong> <span><strong>Virtualización y Calidad:</strong> Creación de programas híbridos y autoevaluación institucional.</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ANALIZADOR DE ESTRATEGIA (GEMELO DIGITAL) -->
+        <section class="max-w-4xl mx-auto mb-24 p-8 bg-indigo-900 rounded-2xl shadow-2xl text-white relative overflow-hidden">
+            <!-- Fondo decorativo -->
+            <div class="absolute top-0 right-0 -mt-20 -mr-20 w-64 h-64 bg-indigo-500 rounded-full blur-[100px] opacity-20"></div>
+            <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-64 h-64 bg-cyan-500 rounded-full blur-[100px] opacity-20"></div>
+
+            <div class="relative z-10">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="p-3 bg-indigo-700/50 rounded-lg">
+                        <svg class="w-8 h-8 text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-extrabold">Analizador de Estrategia Digital</h2>
+                        <p class="text-indigo-200 text-sm">Consultoría preliminar asistida por mi "Gemelo Digital" (IA)</p>
+                    </div>
+                </div>
+
+                <p class="text-indigo-100 mb-8 text-sm leading-relaxed">
+                    ¿Tienes un desafío educativo o institucional? Describe tu situación y mi gemelo digital generará una propuesta inicial basada en mis metodologías (IA, ABP, STEM). Es el primer paso para nuestra futura colaboración.
+                </p>
+
+                <div class="space-y-4">
+                    <label for="userProblem" class="sr-only">Describe tu problema</label>
+                    <textarea id="userProblem" rows="4" 
+                        class="w-full bg-indigo-800/50 border border-indigo-600/50 rounded-xl p-4 text-white placeholder-indigo-300 focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition-all outline-none text-sm"
+                        placeholder="Ej: Necesito integrar IA en mi facultad de derecho pero los docentes tienen resistencia..."></textarea>
+                    
+                    <button onclick="analyzeStrategy()" id="analyzeBtn" 
+                        class="w-full md:w-auto bg-white text-indigo-900 px-8 py-3 rounded-lg font-bold hover:bg-indigo-50 transition-all flex items-center justify-center gap-2">
+                        <span>Generar Propuesta Inicial</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </button>
+                </div>
+
+                <!-- Contenedor de Resultado -->
+                <div id="aiResponseContainer" class="mt-8 hidden">
+                    <div class="bg-indigo-950/50 border border-indigo-700/50 rounded-xl p-6 relative">
+                        <div id="loadingAi" class="flex flex-col items-center py-8 hidden">
+                            <div class="dot-flashing mb-4"></div>
+                            <p class="text-xs font-mono uppercase tracking-widest text-indigo-300">Procesando Estrategia...</p>
+                        </div>
+                        <div id="aiContent" class="prose prose-invert prose-sm max-w-none text-indigo-100 leading-relaxed">
+                            <!-- Aquí va la respuesta de la IA -->
+                        </div>
+                        <div id="aiError" class="text-red-300 text-sm hidden flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+                            <span>Hubo un problema al conectar con mi gemelo digital. Por favor, inténtalo de nuevo.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DIFERENCIALES -->
+        <section class="mb-32">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-slate-800 mb-2">Diferenciales de los Servicios</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="differential-card p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center text-center">
+                    <div class="text-indigo-600 mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">Enfoque Humano</h4>
+                    <p class="text-sm text-slate-600">No es solo tecnología; es desarrollo humano a través de la mediación técnica centrada en la persona.</p>
+                </div>
+                <div class="differential-card p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center text-center">
+                    <div class="text-indigo-600 mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">Metodología Vivencial</h4>
+                    <p class="text-sm text-slate-600">Talleres prácticos diseñados bajo el principio de "aprender haciendo" (Learning by doing).</p>
+                </div>
+                <div class="differential-card p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center text-center">
+                    <div class="text-indigo-600 mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">Sustento Académico</h4>
+                    <p class="text-sm text-slate-600">Servicios respaldados por una trayectoria probada en coordinación académica e investigación.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-16 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="text-center md:text-left">
+                <p class="font-extrabold text-2xl text-white mb-1 tracking-tight">Willy F. Figueroa Celis</p>
+                <p class="text-indigo-400 text-sm font-medium mb-6">Magíster en Educación: Desarrollo Humano</p>
+                <div class="flex flex-col gap-3 text-slate-400 text-sm">
+                    <a href="mailto:willyfigueroac@gmail.com" class="flex items-center justify-center md:justify-start gap-3 hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        willyfigueroac@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/willyfigueroa/" target="_blank" class="flex items-center justify-center md:justify-start gap-3 hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        linkedin.com/in/willyfigueroa
+                    </a>
+                </div>
+            </div>
+            <div class="flex flex-col items-center md:items-end gap-4">
+                <a href="https://wa.me/573158764542" class="bg-emerald-500 hover:bg-emerald-600 text-white px-10 py-4 rounded-full font-bold transition-all flex items-center gap-3 shadow-xl hover:scale-105">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.224-3.52c1.54.914 3.51 1.403 5.56 1.404 5.429 0 9.85-4.42 9.853-9.852 0-2.628-1.022-5.1-2.871-6.948-1.847-1.847-4.322-2.868-6.949-2.868-5.428 0-9.848 4.421-9.852 9.853-.001 1.838.515 3.631 1.492 5.165l-.994 3.63 3.764-.984zm9.881-6.708c-.21-.105-1.24-.612-1.431-.682-.191-.071-.33-.105-.469.105-.139.209-.54.682-.662.821-.122.139-.244.156-.455.051-.21-.105-.885-.327-1.687-1.041-.623-.556-1.043-1.243-1.166-1.453-.122-.21-.013-.323.092-.427.094-.094.21-.244.314-.366.105-.122.139-.209.209-.349.07-.139.035-.261-.017-.366-.053-.105-.469-1.134-.643-1.553-.171-.41-.343-.353-.469-.36-.122-.007-.261-.008-.4-.008s-.365.052-.556.261c-.191.21-.73.714-.73 1.744s.748 2.028.852 2.168c.105.14 1.472 2.247 3.566 3.148.499.215.888.344 1.192.44.502.158.959.135 1.32.081.402-.06 1.24-.506 1.414-.994.175-.488.175-.907.122-.994-.052-.087-.191-.139-.402-.244z"/></svg>
+                    <span>Hablemos por WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const apiKey = ""; // Se inyecta automáticamente
+
+        async function analyzeStrategy() {
+            const problem = document.getElementById('userProblem').value.trim();
+            const btn = document.getElementById('analyzeBtn');
+            const container = document.getElementById('aiResponseContainer');
+            const content = document.getElementById('aiContent');
+            const loader = document.getElementById('loadingAi');
+            const error = document.getElementById('aiError');
+
+            if (!problem) return;
+
+            // Reset UI
+            container.classList.remove('hidden');
+            loader.classList.remove('hidden');
+            content.innerHTML = "";
+            error.classList.add('hidden');
+            btn.disabled = true;
+
+            const systemPrompt = `
+                Actúa como Willy F. Figueroa Celis (Gemelo Digital). 
+                Perfil: Magíster en Educación con énfasis en Desarrollo Humano, experto en IA Generativa, STEM y Gestión Curricular.
+                Tus competencias principales: 
+                - Formación en IA para docentes y administrativos.
+                - Metodologías activas (ABP, Gamificación).
+                - Simulaciones PhET y STEM.
+                - Virtualización de programas y aseguramiento de calidad.
+                
+                Instrucciones:
+                1. Analiza el problema del usuario.
+                2. Genera una propuesta inicial concisa (máx 3 párrafos).
+                3. Alinea la solución con tus metodologías reales (menciona ABP o IA si aplica).
+                4. Usa un tono profesional, empático y consultivo.
+                5. Termina invitándolos a agendar una reunión inicial para ajustar detalles.
+                6. Formatea el texto con negritas para puntos clave.
+            `;
+
+            const payload = {
+                contents: [{ parts: [{ text: `Problema: ${problem}` }] }],
+                systemInstruction: { parts: [{ text: systemPrompt }] }
+            };
+
+            const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+            async function fetchWithRetry(retries = 5, delay = 1000) {
+                try {
+                    const response = await fetch(endpoint, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    
+                    if (!response.ok) throw new Error('API Error');
+                    
+                    const data = await response.json();
+                    return data.candidates?.[0]?.content?.parts?.[0]?.text;
+                } catch (err) {
+                    if (retries > 0) {
+                        await new Promise(r => setTimeout(r, delay));
+                        return fetchWithRetry(retries - 1, delay * 2);
+                    }
+                    throw err;
+                }
+            }
+
+            try {
+                const resultText = await fetchWithRetry();
+                // Simple Markdown-like to HTML conversion for bold and paragraphs
+                const formatted = resultText
+                    .replace(/\n\n/g, '</p><p class="mb-4">')
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/^\d\./gm, '•');
+                
+                content.innerHTML = `<p class="mb-4">${formatted}</p>`;
+            } catch (err) {
+                error.classList.remove('hidden');
+            } finally {
+                loader.classList.add('hidden');
+                btn.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>
